@@ -11,7 +11,12 @@ const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const app = express();
 
 /* -------------------- MIDDLEWARE -------------------- */
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://my-task-fronted.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 /* -------------------- DATABASE -------------------- */
